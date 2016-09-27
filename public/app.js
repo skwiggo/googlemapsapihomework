@@ -9,24 +9,27 @@ var initialize = function() {
   
   var infoWindowText = "<p>Hello!</p>"
     var infoWindow = map.addInfoWindow(infoWindowText);
+    
     map.addListenerForInfoWindow(infoWindow, init)
 
-    var button = createAndAddButton();
-      var clickHandler = function() {
-        map.googleMap.setCenter( new google.maps.LatLng(20.377773, -4.246621) );
+    var button = createButton();
+    
+    var clickHandler = function() {
+        map.googleMap.setCenter( new google.maps.LatLng(50.377773, -74.246621) );
       }
-      button.onclick = clickHandler;
+
+       button.onclick = clickHandler;
     }
 
-    var createAndAddButton = function() {
-      var button = document.createElement( "button" );
-      button.classList.add( "moveTo" );
+    var createButton = function() {
+      var button = document.createElement("button");
+      button.classList.add("moveTo");
       button.innerText = "Take me to CHICKEN SANDWICH";
-      var pButton = document.createElement( "p" );
-      pButton.classList.add( "buttonDiv" );
-      pButton.appendChild( button );
-      var body = document.querySelector( "body" );
-      body.appendChild( pButton );
+      var chickenSandwich = document.createElement("p");
+      chickenSandwich.classList.add("buttonDiv");
+      chickenSandwich.appendChild(button);
+      var body = document.querySelector("body");
+      body.appendChild(chickenSandwich);
       return button;
     }
 
